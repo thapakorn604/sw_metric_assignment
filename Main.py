@@ -14,18 +14,7 @@ df = pd.DataFrame(albrecht)
 print ('---------------------------------INPUT-------------------------------------------')
 print df
 print ('---------------------------------------------------------------------------------')
-# enter = raw_input('Press "enter" to calculate the distance ')
-"""max value
-input_max = df['Input'].max()
-print input_max"""
 
-""" min value
-input_min = df['Input'].min()
-print input_min"""
-
-""" get item by row,column
-items = df.at[4, 'Input']
-print items"""
 # create zero matrix
 dist = np.zeros([df.shape[0], df.shape[0]])
 
@@ -62,7 +51,8 @@ np.fill_diagonal(dist, inf)
 s_d = np.sort(dist)
 dist_sorted = pd.DataFrame(s_d)
 print dist_sorted
-print ('---------------------------------------------------------')
+print ('---------------------------------------------------------'
+       '-------------------------------------------------------')
 
 print ("-------------------------INDEX OF SIMILAR CASE------"
        "--------------------------------")
