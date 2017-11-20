@@ -148,12 +148,39 @@ for i in range(len(df_size)):
     row.append(result * df_UAVG.at[i, 0])
     LSA.append(row)
 
-# RTM Calculation
-RTM = []
 
 print ('---------------LSA CALCULATION-----------------')
 df_LSA = pd.DataFrame(LSA)
 print df_LSA
+
+print ('-----------------------------------------------')
+
+# Cal mean
+
+UAVG_mean = 0
+sum_uavg = 0
+for i in range(len(df_UAVG)):
+    sum_uavg += m.fabs(df_UAVG.at[i, 0] - df.at[i, 'Effort'])
+UAVG_mean = round(sum_uavg/24.0, 2)
+
+IRWM_mean = 0
+sum_irwm = 0
+for i in range(len(df_IRWM)):
+    sum_irwm += m.fabs(df_IRWM.at[i, 0] - df.at[i, 'Effort'])
+IRWM_mean = round(sum_irwm/24.0, 2)
+
+LSA_mean = 0
+sum_lsa = 0
+for i in range(len(df_LSA)):
+    sum_lsa += m.fabs(df_LSA.at[i, 0] - df.at[i, 'Effort'])
+LSA_mean = round(sum_lsa/24.0, 2)
+
+print ('----Accuracy calculation----')
+
+print ('UAVG mean is : ' + str(UAVG_mean))
+print ('IRWM mean is : ' + str(IRWM_mean))
+print ('LSA mean is  : ' + str(LSA_mean))
+
 
 
 
