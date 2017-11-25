@@ -37,7 +37,7 @@ get_dist()  # call function
 # print dist  # matrix result
 # create data frame for distance result
 print ('--------------------------------------------DISTANCE '
-       'TABLE-------------------------------------------------------')
+       'TABLE-------------------------------------------------------') 
 dist_df = pd.DataFrame(dist)
 print dist_df
 print ('---------------------------------------------------------'
